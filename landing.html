@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Stock Market Analyzer</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+
+  <link rel="stylesheet" href="landing.css">
+
+</head>
+<body>
+    <header>
+        <nav id="header" class="navbar navbar-expand-lg navbar-dark">
+        
+          <form action="/" method="get"><input class="logo" type="submit"  value="MalaysiaStock-Pro"></form>
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <form action="/" method="get"> <button type="submit"  >Home</button></form>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">News</a>
+              </li> -->
+              <li class="nav-item">
+                <form action="/company-list" method="get"  > <button type="submit" >Company</button></form>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 search-bar" action="/veryFirst" method="post">
+              <input class="form-control mr-sm-2" type="text" name="companyName"  placeholder="Search for other companies" aria-label="Search">
+              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+       
+      </header>
+
+      <div class="header-content">
+        <h1>Welcome to Our Stock Information Platform</h1>
+          <p>Just search for your company or go to our Company page</p>
+        <!-- <p>Discover comprehensive stock data of top companies</p> -->
+      
+        <form id="f2" class="form-inline my-2 my-lg-0 search-bar" action="/veryFirst" method="post">
+            <input class="form-control mr-sm-2" type="text" name="companyName"  placeholder="Search for other companies" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+          </form>
+
+        <form id="f1" action="/company-list" method="get" class="cta" > <button type="submit" >Get Started</button></form>
+        <!-- <a href="#services" ></a> -->
+       
+
+     </div>
+     
+
+        <!-- Features Section -->
+        <!-- <section id="features">
+            <div class="section-header">
+                <h2>Our Features</h2>
+            </div>
+        
+            <div class="features-container">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Comprehensive Data</h3>
+                    <p>We provide comprehensive stock data for numerous companies.</p>
+                </div>
+        
+              
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Diverse Companies</h3>
+                    <p>Get information from a wide range of companies across various sectors.</p>
+                </div>
+        
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Advanced Tools</h3>
+                    <p>Utilize our advanced tools for in-depth analysis.</p>
+                </div>
+            </div>
+        </section> -->
+        <section id="features">
+            <div class="section-header">
+                <h2>Our Features</h2>
+            </div>
+        
+            <div id="featuresCarousel" class="carousel slide" data-ride="carousel">
+
+                <div class="carousel-inner">
+
+                    <div class="carousel-item active">
+                        <div class="feature-item">
+                            <h3>Comprehensive Data</h3>
+                            <p>We provide comprehensive stock data for numerous companies.</p>
+                        </div>
+                    </div>
+                    <!-- More feature items go here -->
+                    <div class="carousel-item">
+                        <div class="feature-item">
+                            <h3>Historical Trends</h3>
+                            <p>Get historical stock market trends for an in-depth analysis.</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="feature-item">
+                            <h3>Updated News</h3>
+                            <p>Stay updated with the latest news of your preferred companies.</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#featuresCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#featuresCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </section>
+        
+        
+
+        <!-- Services Section -->
+        <section id="services">
+            <div class="section-header">
+                <h2>Our Services</h2>
+            </div>
+        
+            <div class="services-container">
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <h3>Company Profiles</h3>
+                    <p>Explore detailed profiles of companies including their stock history, key executives, and more.</p>
+                </div>
+        
+                <!-- More service items go here -->
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-line-chart"></i>
+                    </div>
+                    <h3>Market Trends</h3>
+                    <p>Understand the latest market trends and make informed decisions.</p>
+                </div>
+        
+                <div class="service-item">
+                    <div class="service-icon">
+                        <i class="fas fa-search-dollar"></i>
+                    </div>
+                    <h3>Investment Opportunities</h3>
+                    <p>Spot lucrative investment opportunities based on our comprehensive data analysis.</p>
+                </div>
+            </div>
+        </section>
+        
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="section-header">
+                <h2 style="margin-top:15px;">Contact Us</h2>
+            </div>
+            <form>
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit" class="cta">Send Message</button>
+            </form>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2023 BursaMalaysia Stock Pro. All Rights Reserved.</p>
+        </footer>
+
+        <!-- Add your JavaScript here -->
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+      
+</body>
+</html>

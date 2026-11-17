@@ -1,0 +1,236 @@
+html{
+    scroll-padding-top: 68px; 
+}
+
+body {
+    background: #0d1e38;;
+    background: linear-gradient(to bottom , #0b1b32, #152e4e, #407088);
+    background: linear-gradient(to bottom ,#152e4e, #407088 ,  #0b1b32);
+    /* background: #1B222D; */
+    /* background: linear-gradient(to bottom, #c4c7d4, #303334); */
+    /* background: linear-gradient(to top, #22389b, #303334); */
+    zoom:80%;
+  }
+
+  /* top navbar section */
+
+
+  nav {
+    position: fixed;
+    /* top: 0;
+    left: 0; */
+    width: 75%;
+    margin:auto;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  }
+
+
+  .logo{
+
+    /* margin: 10px; */
+    padding: 8px;
+    width: 150px;
+    border-radius: 8px;
+    color: rgb(248, 247, 247);
+    border: 1px solid;
+    font-family:fantasy;
+    background: transparent;
+    font-weight: 600;
+    transition: color 0.5s, border-bottom 4s;
+
+  }
+
+  .logo:hover {
+    color: rgb(0, 0, 0);
+    background:white;
+    transform: scale(1.1);
+    }
+
+  /* .navbar ul{
+    margin-right: 20px;
+  } */
+
+ 
+  .nav-item button{
+    margin: 8px ;
+    padding: 7px;
+
+    width: 100px;
+    border-radius: 8px;
+    color: white;
+    border: 1px solid;
+    background: transparent;
+    transition: color 0.5s, border-bottom 4s;
+  }
+
+  .nav-item button:hover {
+    color: rgb(232, 18, 18);
+    /* background:#c4c7d4; */
+    transform: scale(1.1);
+  
+    }
+
+  @media  screen and (max-width:990px) {
+    
+    nav{
+        width: 90%;
+    }
+    .nav-item{
+        display: none;
+    }
+    
+    
+  
+    nav input{
+        width: 100%!important;
+        margin-bottom: 10px;
+    }
+  }
+
+
+  header{
+    border-bottom: 1px solid grey;
+    margin: 0;
+    position: sticky;
+    top: 0;
+    background-color:  #0b1b32;
+    height: 70px;
+    z-index:105;
+  }
+
+
+
+  .card {
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 40px 80px rgba(8, 8, 8, 0.12);
+    overflow: hidden;
+    height: 100%;
+    text-align: center;
+    border: 3px solid black;
+    background: none;
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+
+    cursor: pointer; /* Change cursor to pointer when hovering over the card */
+    transition: transform 0.2s; /* Smooth transformation */
+  }
+
+  @keyframes fadeIn {
+    100% {
+      opacity: 1;
+      
+    }
+  }
+  .card img {
+    height: 200px;
+    object-fit: contain;
+    padding: 10%;
+  }
+
+  .container h1{
+    color: white;
+  }
+
+  /* .card h4 a {
+    color: #333;
+  } */
+
+  .card:hover {
+    transform: scale(1.08);
+  }
+
+  .card h4 a:hover {
+    color: #007BFF;
+    text-decoration: none;
+    transform: scale(1.02);
+  }
+
+  .card::after {
+    /* content: '↓'; */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.2s;
+    color: #fff; 
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.card:hover::after {
+    opacity: 1; /* Show the prompt when the card is hovered over */
+}
+
+
+  /* .card p {
+    color: #666;
+  } */
+
+  .wrap-info{
+    width: 80%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    margin: auto;
+    border-radius: 15px;
+    padding: 5%;
+    opacity:0.6;
+    color: #666;
+    
+  }
+
+  .wrap-info a{
+
+    color: white;
+    
+  }
+
+  #airplane {
+    position: fixed;
+    left: 5%;    
+    top: 80px; /* This will initially hide the airplane above the viewport */
+    animation: airplane-float 15s ease-in-out infinite;
+    color: whitesmoke;
+}
+
+#airplane i {
+    font-size: 2em;
+    color: #152e4e;
+    animation: airplane-rotate 15s ease-in-out infinite;
+}
+
+#airplane::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background: black;
+    z-index: -1;
+}
+
+@keyframes airplane-float {
+    0% { 
+        top: 10%; 
+        left: 5%;    
+    }
+    50% { 
+        top: 110%; 
+    }
+    100% { 
+        top: -20%; 
+    }
+}
+
+@keyframes airplane-rotate {
+    0%, 49% {
+        transform: rotate(90deg);
+    }
+    50%, 100% {
+        transform: rotate(270deg);
+    }
+}
+
+

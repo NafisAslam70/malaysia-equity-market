@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Available Companies</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="company-list.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav id="header" class="navbar navbar-expand-lg navbar-dark">
+        
+          <form action="/" method="get"><input class="logo" type="submit"  value="MalaysiaStock-Pro"></form>
+          
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <form action="/" method="get"> <button type="submit"  >Home</button></form>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="#">News</a>
+              </li> -->
+              <li class="nav-item">
+                <form action="/company-list" method="get"  > <button type="submit" >Company</button></form>
+              </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0 search-bar" action="/veryFirst" method="post">
+              <input class="form-control mr-sm-2" type="text" name="companyName"  placeholder="Search for other companies" aria-label="Search">
+              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>
+        </nav>
+      </header>
+
+      <div class="container d-flex flex-column align-items-center justify-content-center">
+        <h1 class="my-4">Available Companies</h1>
+        <div class="row">
+            <% for(let company in companies) { %>
+                <div class="col-lg-4 col-sm-6 mb-4">
+                    <div class="card h-100">
+                        <a href="/company.html?query=<%= encodeURIComponent(company) %>">
+                            <img class="card-img-top" src="<%= companies[company].logo %>" alt="<%= company %> logo">
+                            <div class="overlay">
+                                <div class="text" style="color: goldenrod; opacity:0.6;">Click to see details</div>
+                            </div>
+                        </a>
+                        <div class="card-body">
+                            <div class="wrap-info">
+                                <h4 class="card-title">
+                                    <a href="/company.html?query=<%= encodeURIComponent(company) %>">
+                                        <%= company.charAt(0).toUpperCase() + company.slice(1) %>
+                                    </a>
+                                </h4>
+                                <p class="card-text">Symbol: <%= companies[company].symbol %></p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            <% } %>
+        </div>
+    </div>
+    
+<!--      
+      <div class="container d-flex flex-column align-items-center justify-content-center">
+        <h1 class="my-4">Available Companies</h1>
+    <div class="row">
+      <% for(let company in companies) { %>
+        <div class="col-lg-4 col-sm-6 mb-4">
+          <div class="card h-100">
+            <a href="/company.html?query=<%= encodeURIComponent(company) %>">
+                <img class="card-img-top" src="<%= companies[company].logo %>" alt="<%= company %> logo">
+            </a>
+            
+            <div class="card-body">
+                <h4 class="card-title">
+                    <a href="/company.html?query=<%= encodeURIComponent(company) %>">
+                        <%= company.charAt(0).toUpperCase() + company.slice(1) %>
+                    </a>
+                </h4>
+                <p class="card-text">Symbol: <%= companies[company].symbol %></p>
+            </div>
+            
+          </div>
+        </div>
+      <% } %>
+    </div>
+  </div> -->
+
+  <div id="airplane">
+    <i class="fas fa-chart-bar"></i>
+    <i class="fas fa-plane"></i>
+    <i class="fas fa-chart-line"></i>
+ </div>
+
+</body>
+</html>
